@@ -26,8 +26,8 @@ Movement:
 clear (clears the whole canvas.)
 
 save (saves the drawing as a text file for future loading.)
-  #CANNOT SAVE IF A FILE NAMED save.txt ALREADY EXISTS!
+  # CANNOT SAVE IF A FILE NAMED save.txt ALREADY EXISTS!
 
 load (loads an image that was previously created with "save" command.)
-  #FILE MUST BE NAME load.txt!
+  # FILE MUST BE NAME load.txt!
  
