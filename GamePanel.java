@@ -60,58 +60,27 @@ public class GamePanel extends JPanel implements ActionListener {
       this.draw(g);
    }
 
+   public void fillIn(Graphics g, Color c) {
+      g.setColor(Color.c);
+      g.fillRect(i * 25, j * 25, 25, 25);
+   }
+
    public void draw(Graphics g) {
       int i;
       for(i = 0; i < this.rows; ++i) {
          g.drawLine(i * 25, 0, i * 25, 600);
          g.drawLine(0, i * 25, 600, i * 25);
       }
+      Color[] blockColors = {Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.magenta, Color.white, Color.gray, Color.black};
+      String[] blockID = {"1L", "2L", "3L", "4L", "5L", "6L", "7L", "8L", "9L"}
 
       for(i = 0; i < this.rows; ++i) {
-         for(int j = 0; j < this.colls; ++j) {
-            if (this.blockPos[i][j] == 1L) {
-               g.setColor(Color.red);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 2L) {
-               g.setColor(Color.orange);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 3L) {
-               g.setColor(Color.yellow);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 4L) {
-               g.setColor(Color.green);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 5L) {
-               g.setColor(Color.blue);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 6L) {
-               g.setColor(Color.magenta);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 7L) {
-               g.setColor(Color.white);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 8L) {
-               g.setColor(Color.gray);
-               g.fillRect(i * 25, j * 25, 25, 25);
-            }
-
-            if (this.blockPos[i][j] == 9L) {
-               g.setColor(Color.black);
-               g.fillRect(i * 25, j * 25, 25, 25);
+         for(int j = 0; j < this.colls; ++j) { 
+            for (int k = 0; k < blockID.length; k++) {
+               if (blockID[i] == this.blockPos[i][j]) {
+                  g.setColor(blockColors[i]);
+                  g.fillRect(i * 25, j * 25, 25, 25);
+               }
             }
          }
       }
