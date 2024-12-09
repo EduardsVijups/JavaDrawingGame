@@ -66,15 +66,14 @@ public class GamePanel extends JPanel implements ActionListener {
    }
 
    public void draw(Graphics g) {
-      int i;
-      for(i = 0; i < this.rows; ++i) {
-         g.drawLine(i * 25, 0, i * 25, 600);
-         g.drawLine(0, i * 25, 600, i * 25);
+      for(int l = 0; l < this.rows; ++l) {
+         g.drawLine(l * 25, 0, l * 25, 600);
+         g.drawLine(0, l * 25, 600, l * 25);
       }
       Color[] blockColors = {Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.magenta, Color.white, Color.gray, Color.black};
-      String[] blockID = {"1L", "2L", "3L", "4L", "5L", "6L", "7L", "8L", "9L"}
+      String[] blockID = {"1L", "2L", "3L", "4L", "5L", "6L", "7L", "8L", "9L"};
 
-      for(i = 0; i < this.rows; ++i) {
+      for(int i = 0; i < this.rows; ++i) {
          for(int j = 0; j < this.colls; ++j) { 
             for (int k = 0; k < blockID.length; k++) {
                if (blockID[i] == this.blockPos[i][j]) {
